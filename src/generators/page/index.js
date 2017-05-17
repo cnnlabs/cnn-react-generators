@@ -33,8 +33,9 @@ function Page(pathForPages, pathForRoutesFile) {
             when: (answers) => (answers.route),
             validate: (value) => {
                 // TODO: make sure that the file doesnt already exist
-                if ((/.+/).test(value)) { return true; }
-                return 'path is required';
+                if (!(/.+/).test(value)) { return 'path is required'; }
+                if (value.indexOf('/') !== 0) { return 'leading slash is required'; }
+                return true;
             }
         }
     ];
