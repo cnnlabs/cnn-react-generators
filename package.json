@@ -10,6 +10,12 @@
   },
   "dependencies": {
     "nconf": "0.8.4",
-    "plop": "1.7.4"
-  }
+    "plop": "1.7.4",
+    "snyk": "^1.192.4"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
